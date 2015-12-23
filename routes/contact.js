@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var mandrillTransport = require('nodemailer-mandrill-transport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,13 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/send', function(req, res, next) {
-   var transporter = nodemailer.createTransport({
-       service: 'Gmail',
+   var transporter = nodemailer.createTransport(mandrillTransport({
        auth: {
-           user: 'itz.saga@gmail.com'
-           pass: '******'
+           apiKey: 'y2td6ByqZMFLQxmJhlCyeQ'
        }
-   });
+   }));
 
    var mailOptions = {
        from: 'John <john@website.com>',

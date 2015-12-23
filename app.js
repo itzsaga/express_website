@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
+var mandrillTransport = require('nodemailer-mandrill-transport');
 
 var routes = require('./routes/index');
 var about = require('./routes/about');
