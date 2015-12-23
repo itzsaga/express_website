@@ -16,11 +16,11 @@ router.post('/send', function(req, res, next) {
    }));
 
    var mailOptions = {
-       from: 'John <john@website.com>',
+       from: 'Seth <seth@sethaalexander.com>',
        to: 'Seth <itz.saga@gmail.com>',
        subject: 'Website submission',
        text: 'You have a new submission with the following details... Name: '+req.body.name+ ' Email: '+req.body.email+ ' Message: '+req.body.message,
-       html: '<p>You got a new sumission with the following details...</p><ul><li>Name: '+req.body.name+'</li><li>Email: '+req.body.email+'</li><li>Message: '+req.body.message'</li></ul>'
+       html: '<p>You have a new submission with the following details...</p><ul><li>Name: '+req.body.name+'</li><li>Email: '+req.body.email+'</li><li>Message: '+req.body.message,'</li></ul>':''
    };
 
    transporter.sendMail(mailOptions, function(error, info) {
